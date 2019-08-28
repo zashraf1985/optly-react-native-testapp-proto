@@ -1,4 +1,4 @@
-# Optimizely React Native Testapp Prototype
+# Optimizely React Native Test App Prototype
 This is a prototype and proof of concept for react native testapp design. It only demonstrates high level design and does not use / test all features of SDK
 
 ## Prototype Code
@@ -18,7 +18,7 @@ yarn web
 ## High Level Design
 
 ### MainScreen
-Main Screen is the screen that mobile e2e server will interact with. Ideally me2e will send a link to the file containing list of requests but for prototype, request list is defined inside data/SampleRequests.ts.
+Main Screen is the screen that mobile e2e server will interact with. Ideally me2e will send a link to the file containing list of requests. But, for prototype, request list is defined inside data/SampleRequests.ts.
 When "Call API" button is clicked, it renders the following block once for each request.
 
 ```Javascript
@@ -40,7 +40,7 @@ processNextRequest = () => {
   )    
 }
 ```
-When all the requests is are processed, the resulting JSON is populated in the TextView as expected by Mobile E2E server.
+When all the requests are processed, resulting JSON is populated in the TextView as expected by Mobile E2E server.
 
 ### OptlyRequest
 A new instance of this component is created for each request. This is ensured by setting `currentRequest` to null in the parent component after each request is processed to destroy the component. It uses `OptimizelyProvider` to initialize a new optimizely instance.
@@ -67,7 +67,7 @@ It creates `OptimizelyProvider` for each request.
 </OptimizelyProvider>
 ```
 
-`callaAPIMethod` makes the actual call to optimizely SDK. Activate, isFeatureEnabled and getFeatureVariable are be called using React SDK components while other SDK methods are called directly on optimizely client instance. 
+`callAPIMethod` makes the actual call to optimizely SDK. Activate, isFeatureEnabled and getFeatureVariable are called using React SDK components while other SDK methods are called directly on optimizely client instance. 
 
 ```Javascript
 switch (callApi) {
