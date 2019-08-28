@@ -8,16 +8,16 @@ import { Payload } from './Interfaces';
 import OptlyWrapper from './OptlyWrapper';
 import OptlyWrapperFactory from './OptlyWrapperFactory';
 
-interface OptlyComponentProps {
+interface OptlyRequestProps {
   callApi: String,
   payload: Payload,
   completionHandler: Function,
 };
 
-export default class OptlyComponent extends React.Component<OptlyComponentProps> {
+export default class OptlyRequest extends React.Component<OptlyRequestProps> {
   optlyInstance: OptlyWrapper;
 
-  constructor(props: OptlyComponentProps) {
+  constructor(props: OptlyRequestProps) {
     super(props);
     console.log('Initializing OptimizelyComponent');
     this.optlyInstance = OptlyWrapperFactory.getInstance(props.payload.context.session_id, props.payload);

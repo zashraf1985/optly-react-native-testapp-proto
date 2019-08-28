@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
-import OptlyComponent from './OptlyComponent'; 
+import OptlyRequest from './OptlyRequest'; 
 import { sampleRequests } from './data/SampleRequests';
 
 interface MainScreenState {
@@ -64,7 +64,7 @@ export default class MainScreen extends React.Component<{}, MainScreenState> {
         <Button testID="btnCallAPI" title="Call API" onPress={ this.processRequests }/>
         <View style={{ display: "none" }}>
           { currentRequest &&
-            <OptlyComponent 
+            <OptlyRequest 
               callApi={ currentRequest.call_api } 
               payload={ currentRequest.body.payload }
               completionHandler={ this.onRequestComplete }
