@@ -11,7 +11,7 @@ https://github.com/zashraf1985/optly-react-native-testapp-proto/tree/master/prot
 
 ```
 yarn install
-npm install -g expo
+npm install -g expo-cli
 yarn web
 ```
 
